@@ -1,0 +1,14 @@
+const mongoose = require('mongoose');
+
+const assignmentSchema = mongoose.Schema({
+    courseId:{
+        type: String,
+        required: true
+    },
+    assignments:{
+        type:Array,
+        "default":[] // contains {title,fileLink}
+    }
+},{timestamps: true});
+
+module.exports = mongoose.model('assignment',assignmentSchema);

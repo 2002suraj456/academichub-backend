@@ -1,0 +1,21 @@
+const mongoose = require('mongoose');
+
+const examsheetSchema = mongoose.Schema({
+    roll: { //student's roll
+        type: String,
+        required: true
+        // minlength: 5,
+        // maxlength: 20
+    },
+    courseId: {
+        type: String,
+        required: true,
+        // minlength: 6
+    },
+    fileLink:{
+        type: String,
+        required: true,
+    }
+},{timestamps: true});
+
+module.exports = mongoose.model('examsheet',examsheetSchema);
